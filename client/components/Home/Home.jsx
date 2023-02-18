@@ -2,6 +2,7 @@ import React, { useEffect, Fragment, useState } from "react";
 // import { Link } from "react-router-dom";
 // import styles from "./Home.module.css";
 import { Transition } from "@headlessui/react";
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { useTimeoutFn } from "react-use";
 
 function Home() {
@@ -21,7 +22,7 @@ function Home() {
           leaveFrom="opacity-100 rotate-0 scale-100 "
           leaveTo="opacity-0 scale-95 "
         >
-          <div className="h-full w-full rounded-md bg-white shadow-lg" />
+          <div className="h-full w-full rounded-md bg-black shadow-lg" />
         </Transition>
       </div>
 
