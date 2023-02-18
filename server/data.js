@@ -1,11 +1,3 @@
-const mongoose = require("mongoose");
-
-const cardData = [
-  new mongoose.Types.ObjectId(),
-  new mongoose.Types.ObjectId(),
-  new mongoose.Types.ObjectId(),
-];
-
 const cards = [
   {
     name: "Random Tech Name 1",
@@ -21,6 +13,11 @@ const cards = [
     name: "Random Tech Name 3",
     pros: "very very fast",
     cons: "way too much memory use",
+  },
+  {
+    name: "Random Tech Name 4",
+    pros: "no memory used",
+    cons: "super slow",
   },
 ];
 

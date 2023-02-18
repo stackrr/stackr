@@ -1,10 +1,12 @@
-import React from 'react'
-import styles from './TestPage.module.css'
+import React from "react";
+import styles from "./TestPage.module.css";
 
 function TestPage() {
   return (
-    <div className={styles.wrapper}>TestPage</div>
-  )
+    <div>
+      <div className={styles.wrapper}>TestPage</div>
+    </div>
+  );
 }
 
-export default TestPage
+export default TestPage;

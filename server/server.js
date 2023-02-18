@@ -10,6 +10,7 @@ const PORT = 4000;
 const MONGO_URI =
   "mongodb+srv://bhcodeseverything:stackr@stackrcluster.ocheckb.mongodb.net/?retryWrites=true&w=majority";
 
+// CONNECTING MONGODB
 mongoose
   .connect(MONGO_URI, {
     useNewUrlParser: true,
@@ -18,7 +19,7 @@ mongoose
   })
   .then(() => {
     /* ADD DATA ONE TIME */
-    Stack.insertMany(cards);
+    // Stack.insertMany(cards, { unique: true });
 
     console.log("Connected to Mongo DB.");
   })
@@ -27,10 +28,12 @@ mongoose
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.get("/", dbController.getTech, (req, res) => {
-  res.status(200).json(res.locals.cards);
+// GRABBING DATA TO RENDER ON FRONTEND
+app.get("/cards", dbController.getTech, (req, res) => {
+  res.sendStatus(200);
 });
 
+// ERROR HANDLERS
 app.use((req, res) => res.status(404).send("Page not found"));
 
 app.use((err, req, res) => {

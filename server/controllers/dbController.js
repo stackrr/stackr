@@ -4,8 +4,11 @@ const dbController = {};
 
 dbController.getTech = async (req, res, next) => {
   try {
+    // grab data from db
+    // add error handler?
     const cards = await Stack.find();
-    console.log(cards);
+
+    // store data in the res.locals
     res.locals.cards = cards;
     next();
   } catch (err) {
