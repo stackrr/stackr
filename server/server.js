@@ -1,6 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const { Stack } = require("./models/stackModel");
+const { Card } = require("./models/Card");
 const cards = require("./data");
 const dbController = require("./controllers/dbController");
 
@@ -8,19 +8,29 @@ const app = express();
 const PORT = 4000;
 
 const MONGO_URI =
-  "mongodb+srv://bhcodeseverything:stackr@stackrcluster.ocheckb.mongodb.net/?retryWrites=true&w=majority";
+  "mongodb+srv://stackr:stackr@stackr.jsae8zi.mongodb.net/?retryWrites=true&w=majority";
 
 // CONNECTING MONGODB
+mongoose.set("strictQuery", true);
 mongoose
   .connect(MONGO_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    dbName: "stacks",
+    dbName: "technologies",
   })
   .then(() => {
     /* ADD DATA ONE TIME */
-    // Stack.insertMany(cards, { unique: true });
+    Card.insertMany(
+      cards.filter((card) => {
+        if (!Card.find({ name: card.name })) return card;
+      })
+    );
+    // console.log(Card.find({ name: "{ $exists: true }" }));
 
+    // console.log(Card.insertMany);
+    // console.log(Card === mongoose.models); // false
+    // console.log(Card) // { Card: Model { cards } }
+    // console.log(mongoose.models); // { cards: Model { cards } }
     console.log("Connected to Mongo DB.");
   })
   .catch((err) => console.log(err));
@@ -30,7 +40,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // GRABBING DATA TO RENDER ON FRONTEND
 app.get("/cards", dbController.getTech, (req, res) => {
-  res.sendStatus(200);
+  res.status(200).json(res.locals.cards);
 });
 
 // ERROR HANDLERS
