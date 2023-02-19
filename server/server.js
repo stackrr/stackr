@@ -20,11 +20,7 @@ mongoose
   })
   .then(() => {
     /* ADD DATA ONE TIME */
-    Card.insertMany(
-      cards.filter((card) => {
-        if (!Card.find({ name: card.name })) return card;
-      })
-    );
+    // Card.insertMany(cards);
     // console.log(Card.find({ name: "{ $exists: true }" }));
 
     // console.log(Card.insertMany);
