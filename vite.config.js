@@ -5,7 +5,7 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   server: {
     proxy: {
-      "/cards": {
+      "/api": {
         target: "http://localhost:4000",
         secure: false,
       },

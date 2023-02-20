@@ -10,7 +10,6 @@ function App() {
   const [stackChoices, setStackChoices] = useState([]);
   return (
     <Routes>
-      {/* <Route path='/' element={<NavBar/> }> */}
       <Route path="/" element={<Home />} />
       <Route
         path="/test"
@@ -21,7 +20,10 @@ function App() {
           />
         }
       />
-      {/* <Route path="/" element={<ResultsPage />} /> */}
+      <Route
+        path="/results"
+        element={<ResultsPage stackChoices={stackChoices} />}
+      />
     </Routes>
   );
 }
