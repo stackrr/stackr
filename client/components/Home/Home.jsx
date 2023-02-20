@@ -1,10 +1,23 @@
 import React, { useEffect, Fragment, useState } from "react";
 import HomeCarousel from "./HomeCarousel";
 import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
+// import styles from "./Home.module.css";
+import { Transition } from "@headlessui/react";
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { useTimeoutFn } from "react-use";
+import TopBar from "../TopBar/TopBar";
 
 function Home() {
   return (
     <div className="bg-gradient-to-br from-blue-100 to-purple-200 w-screen h-screen flex justify-center items-center">
+      <TopBar />
+      <div>
+        <div>
+          <p className="text-3xl font-bold underline">HELLO WORLD</p>
+          <Link to="/test">go to test page</Link>
+        </div>
+      </div>
       <div className="bg-white rounded-2xl shadow-lg  h-5/6 w-5/6 border-1 flex flex-col justify-center items-center">
         <div className="w-5/6 h-5/6 flex justify-center items-center">
           <HomeCarousel />
@@ -29,12 +42,3 @@ export default Home;
 //   //     setDummyData(dummy);
 //   //   });
 // }, []);
-
-// return (
-//   <div>
-//     <div>
-//       <p className="text-3xl font-bold underline">HELLO WORLD</p>
-//       <Link to="/test">go to test page</Link>
-//     </div>
-//   </div>
-// );
