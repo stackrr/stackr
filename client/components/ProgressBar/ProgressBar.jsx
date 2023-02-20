@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import styles from "./ProgressBar.module.css";
 
 function ProgressBar({ completed, setCompleted }) {
-  const bgColor = "#6a1b9a";
+  const bgColor = "rgba(18, 39, 201, 0.5)";
 
   const labelStyles = {
     padding: 5,
@@ -19,7 +19,6 @@ function ProgressBar({ completed, setCompleted }) {
 
   return (
     <div className={styles.wrapper}>
-      Progress Bar
       <div className={styles.containerStyles}>
         <div
           className={styles.fillerStyles}
