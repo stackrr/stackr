@@ -1,5 +1,6 @@
 import React, { useEffect, Fragment, useState } from "react";
 import HomeCarousel from "./HomeCarousel";
+import { Link } from "react-router-dom";
 
 function Home() {
   return (
