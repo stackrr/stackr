@@ -1,92 +1,48 @@
-import React, { Fragment, useState } from "react";
+import React from "react";
+import { Popover } from "@headlessui/react";
+
 import { Dialog, Transition } from "@headlessui/react";
-import SelectionPopup from "../SelectionPopup/SelectionPopup";
 import styles from "./Selection.module.css";
 
-function Selection({ tech, pros, cons }) {
-  const [isOpen, setIsOpen] = useState(true);
-
-  function closePopover() {
-    setIsOpen(false);
-  }
-
-  function openPopover() {
-    setIsOpen(true);
-  }
-
+function Selection({ category, tech, resources, pros, cons }) {
   return (
-    <>
-      <div className="fixed inset-0 flex items-center justify-center">
-        <button
-          type="button"
-          onClick={openPopover}
-          className="rounded-md bg-black bg-opacity-20 px-4 py-2 text-sm font-medium text-white hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
-        >
-          Open dialog
-        </button>
-      </div>
-
-      <Transition appear show={isOpen} as={Fragment}>
-        <Dialog as="div" className="relative z-10" onClose={closePopover}>
-          <Transition.Child
-            as={Fragment}
-            enter="ease-out duration-300"
-            enterFrom="opacity-0"
-            enterTo="opacity-100"
-            leave="ease-in duration-200"
-            leaveFrom="opacity-100"
-            leaveTo="opacity-0"
+    <div class="group relative rounded-xl border border-slate-200">
+      <div class="absolute -inset-px rounded-xl border-2 border-transparent opacity-0 [background:linear-gradient(var(--quick-links-hover-bg,theme(colors.sky.50)),var(--quick-links-hover-bg,theme(colors.sky.50)))_padding-box,linear-gradient(to_top,theme(colors.indigo.400),theme(colors.cyan.400),theme(colors.sky.500))_border-box] group-hover:opacity-100 "></div>
+      <Popover>
+        <div class="relative overflow-hidden rounded-xl p-6">
+          <Popover.Button>
+            <h1 className="font-display text-3xl tracking-tight text-slate-900">
+              {category}: {tech}
+            </h1>
+            <h2 className="mt-1 text-lg text-slate-700">Pros: {pros}</h2>
+            <h2 className="mt-1 text-lg text-slate-700">Cons: {cons}</h2>
+          </Popover.Button>
+          <Transition
+            enter="transition duration-100 ease-out"
+            enterFrom="transform scale-95 opacity-0"
+            enterTo="transform scale-100 opacity-100"
+            leave="transition duration-75 ease-out"
+            leaveFrom="transform scale-100 opacity-100"
+            leaveTo="transform scale-95 opacity-0"
           >
-            <div className="fixed inset-0 bg-black bg-opacity-25" />
-          </Transition.Child>
-
-          <div className="fixed inset-0 overflow-y-auto">
-            <div className="flex min-h-full items-center justify-center p-4 text-center">
-              <Transition.Child
-                as={Fragment}
-                enter="ease-out duration-300"
-                enterFrom="opacity-0 scale-95"
-                enterTo="opacity-100 scale-100"
-                leave="ease-in duration-200"
-                leaveFrom="opacity-100 scale-100"
-                leaveTo="opacity-0 scale-95"
-              >
-                <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
-                  <Dialog.Title
-                    as="h3"
-                    className="text-lg font-medium leading-6 text-gray-900"
-                  >
-                    {tech}
-                  </Dialog.Title>
-                  <div className="mt-2">
-                    <p className="text-sm text-gray-500">
-                      <span>Pros: </span>
-                      {pros}
-                    </p>
-                    <p className="text-sm text-gray-500">
-                      <span>Cons: </span>
-                      {cons}
-                    </p>
-                  </div>
-
-                  <div className="mt-4">
-                    <button
-                      type="button"
-                      className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
-                      onClick={closePopover}
-                    >
-                      Got it, thanks!
-                    </button>
-                  </div>
-                </Dialog.Panel>
-              </Transition.Child>
-            </div>
-          </div>
-        </Dialog>
-      </Transition>
-      <SelectionPopup />
-    </>
+            <Popover.Panel>
+              {resources.map((resource) => (
+                <p>
+                  <a href={resource}>
+                    <span class="absolute -inset-px rounded-xl"></span>
+                    {resource}
+                  </a>
+                </p>
+              ))}
+            </Popover.Panel>
+          </Transition>
+        </div>
+      </Popover>
+    </div>
   );
 }
 
 export default Selection;
+
+{
+}

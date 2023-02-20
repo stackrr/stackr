@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { Transition } from "@headlessui/react";
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { useTimeoutFn } from "react-use";
+import TopBar from "../TopBar/TopBar";
 
 function Home() {
   let [isShowing, setIsShowing] = useState(true);
@@ -11,6 +12,7 @@ function Home() {
 
   return (
     <div className="flex flex-col items-center py-16">
+      <TopBar />
       <div>
         <div>
           <p className="text-3xl font-bold underline">HELLO WORLD</p>
