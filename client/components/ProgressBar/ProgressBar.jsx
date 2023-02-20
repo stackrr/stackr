@@ -1,15 +1,33 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./ProgressBar.module.css";
 
-function ProgressBar() {
-  const completed = 20;
-  const bgColor = "#6a1b9a";
+function ProgressBar({ completed, setCompleted }) {
+  const bgColor = "rgba(18, 39, 201, 0.5)";
+
+  const labelStyles = {
+    padding: 5,
+    color: "white",
+    fontWeight: "bold",
+  };
+
+  // TODO change colors based on level of completion
+  // ie: red at 0% to green at 100%
+
+  // useEffect(() => {
+  //   setInterval(() => setCompleted(Math.floor(Math.random() * 100) + 1), 2000);
+  // }, []);
+
   return (
     <div className={styles.wrapper}>
-      ProgressBar
       <div className={styles.containerStyles}>
-        <div className={styles.fillerStyles} style={{ color: bgColor }}>
-          <span className={styles.labeStyles}> {`${completed}%`} </span>
+        <div
+          className={styles.fillerStyles}
+          style={{
+            backgroundColor: bgColor,
+            width: `${completed}%`,
+          }}
+        >
+          <span className={styles.labelStyles}>{`${completed}%`}</span>
         </div>
       </div>
     </div>

@@ -1,24 +1,30 @@
 .wrapper {
   font-size: 1rem;
+  display: flex;
+  justify-content: center;
 }
 
 .containerStyles {
-  height: 20;
-  width: "100%";
-  background-color: "#e0e0de";
-  border-radius: 50;
-  margin: 50;
+  height: 20px;
+  width: 80vw;
+  background-color: rgba(87, 87, 87, 0.5);
+  border-radius: 50px;
+  margin: 2rem;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .fillerStyles {
-  height: "100%";
-  background-color: bgcolor;
-  border-radius: "inherit";
-  text-align: "right";
+  height: 100%;
+  border-radius: inherit;
+  text-align: right;
+  transition: width 1s ease-in-out;
 }
 
 .labelStyles {
-  padding: 5;
+  padding: 5px;
   color: white;
   font-weight: bold;
 }
