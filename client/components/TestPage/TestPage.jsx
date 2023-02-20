@@ -6,6 +6,7 @@ import ProgressBar from "../ProgressBar/ProgressBar";
 import Card from "../Card/Card";
 import StackChoiceBar from "../StackChoiceBar/StackChoiceBar";
 import StackChoice from "../StackChoice/StackChoice";
+import TopBar from "../TopBar/TopBar";
 
 function TestPage({ stackChoices, setStackChoices }) {
   // dummy data for percentage completion
@@ -60,7 +61,12 @@ function TestPage({ stackChoices, setStackChoices }) {
 
   return (
     <div className={styles.wrapper}>
-      <ProgressBar completed={completed} setCompleted={setCompleted} />
+      <div className={styles.progressBarHolder}>
+        <h1 className="bg-gradient-to-r from-indigo-300 via-sky-400 to-indigo-300 bg-clip-text font-display text-5xl tracking-tight text-transparent">
+          stackr
+        </h1>
+        <ProgressBar completed={completed} setCompleted={setCompleted} />
+      </div>
       <h2 className={styles.currentTestTitle}>
         Choose your Frontend Framework
       </h2>
@@ -76,12 +82,6 @@ function TestPage({ stackChoices, setStackChoices }) {
         })}
         <StackChoiceBar stackChoices={stackChoices} />
       </div>
-      <Link
-        to="/results"
-        className="mt-3 inline-flex items-center bg-gradient-to-r from-purple-400 to-pink-600 text-2xl text-white font-bold py-2 px-4 hover:bg-yellow-700 py-3 px-8 rounded-lg border-b-4 border-black-700 hover:border-yellow-800 transition duration-300"
-      >
-        View Your Stack
-      </Link>
     </div>
   );
 }

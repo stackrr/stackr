@@ -3,8 +3,8 @@ const texts = [
   determine which technologies you want to use`,
   `With so many technologies and frameworks out there, how do you know which one to choose?`,
   `It is important to know what you have at your disposal and the tradeoffs between technologies`,
-  `Thats why we developed StackR`,
-  `StackR is a visual tool that allows you to see the differences between technologies and frameworks at different
+  `That's why we developed stackr`,
+  `stackr is a visual tool that allows you to see the differences between technologies and frameworks at different
   parts of the technology stack in order to help you pick the best one for your project`,
 ];
 

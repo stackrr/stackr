@@ -1,4 +1,6 @@
 .wrapper {
+  @apply bg-gradient-to-br from-sky-100 to-purple-100 w-screen h-screen items-center;
+
   font-size: 1rem;
   background-color: white;
 }

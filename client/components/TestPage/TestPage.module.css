@@ -1,6 +1,8 @@
 .wrapper {
+  @apply bg-gradient-to-br from-[#2E3233] to-[#6C96C9] w-screen h-screen;
   font-size: 1rem;
   width: 100%;
+  min-height: 100%;
 }
 
 .cardHolder {
@@ -13,5 +15,12 @@
   font-size: 2rem;
   font-weight: 700;
   text-align: center;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
+  color: #38bdf8;
+  text-shadow: 1px 1px 2px rgb(46, 50, 51);
+}
+
+.progressBarHolder {
+  display: flex;
+  width: 80%;
 }
