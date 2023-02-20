@@ -1,11 +1,7 @@
 import React, { useEffect, Fragment, useState } from "react";
 import HomeCarousel from "./HomeCarousel";
 import { Link } from "react-router-dom";
-import { Link } from "react-router-dom";
-// import styles from "./Home.module.css";
-import { Transition } from "@headlessui/react";
-// eslint-disable-next-line import/no-extraneous-dependencies
-import { useTimeoutFn } from "react-use";
+
 import TopBar from "../TopBar/TopBar";
 
 function Home() {
