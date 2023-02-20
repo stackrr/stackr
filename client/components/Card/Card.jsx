@@ -2,7 +2,7 @@ import * as React from "react";
 import styles from "./Card.module.css";
 
 function Card({ option, handleClick }) {
-  console.log(option);
+  // console.log(option);
 
   return (
     <div className={styles.cardAndButtonHolder}>
@@ -29,10 +29,7 @@ function Card({ option, handleClick }) {
           }
         })}
       </div>
-      <button
-        className={styles.selector}
-        onClick={() => handleClick(option.name)}
-      >
+      <button className={styles.selector} onClick={() => handleClick(option)}>
         Select {option.name}
       </button>
     </div>
