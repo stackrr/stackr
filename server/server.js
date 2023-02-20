@@ -35,7 +35,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // GRABBING DATA TO RENDER ON FRONTEND
-app.get("/cards", dbController.getTech, (req, res) => {
+app.get("/api", dbController.getTech, (req, res) => {
   res.status(200).json(res.locals.cards);
 });
 
