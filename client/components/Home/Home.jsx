@@ -1,5 +1,5 @@
 import React, { useEffect, Fragment, useState } from "react";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 // import styles from "./Home.module.css";
 import { Transition } from "@headlessui/react";
 // eslint-disable-next-line import/no-extraneous-dependencies
@@ -11,6 +11,12 @@ function Home() {
 
   return (
     <div className="flex flex-col items-center py-16">
+      <div>
+        <div>
+          <p className="text-3xl font-bold underline">HELLO WORLD</p>
+          <Link to="/test">go to test page</Link>
+        </div>
+      </div>
       <div className="h-32 w-32">
         <Transition
           as={Fragment}
@@ -58,12 +64,3 @@ export default Home;
 //   //     setDummyData(dummy);
 //   //   });
 // }, []);
-
-// return (
-//   <div>
-//     <div>
-//       <p className="text-3xl font-bold underline">HELLO WORLD</p>
-//       <Link to="/test">go to test page</Link>
-//     </div>
-//   </div>
-// );

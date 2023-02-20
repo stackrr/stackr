@@ -13,5 +13,6 @@ module.exports = {
   plugins: ["react"],
   rules: {
     "no-console": "off",
+    "import/extensions": "never",
   },
 };
