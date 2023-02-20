@@ -8,8 +8,8 @@ function StackChoiceBar({ stackChoices }) {
     <div className={styles.wrapper}>
       <div className={styles.stackChoiceBar}>
         {stackChoices.map((stackChoice) => {
-          console.log(stackChoice);
-          return <StackChoice stackChoice={stackChoice} />;
+          console.log("stackChoice", stackChoice);
+          return <StackChoice stackChoice={stackChoice.name} />;
         })}
       </div>
     </div>
