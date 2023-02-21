@@ -48,6 +48,7 @@
 .selector {
   font-size: 1rem;
   background: linear-gradient(45deg, #a5b4fc 0%, #38bdf8 100%);
+  /* background: radial-gradient(circle, #38bdf8 0%, #a5b4fc 100%); */
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);

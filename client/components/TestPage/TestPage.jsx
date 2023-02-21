@@ -62,10 +62,17 @@ function TestPage({ stackChoices, setStackChoices }) {
   return (
     <div className={styles.wrapper}>
       <div className={styles.progressBarHolder}>
-        <h1 className="bg-gradient-to-r from-indigo-300 via-sky-400 to-indigo-300 bg-clip-text font-display text-5xl tracking-tight text-transparent">
+        <ProgressBar
+          className={styles.progressBar}
+          completed={completed}
+          setCompleted={setCompleted}
+        />
+
+        <h1
+          className={`${styles.logo} bg-gradient-to-r from-indigo-300 via-sky-400 to-indigo-300 bg-clip-text text-5xl text-transparent`}
+        >
           stackr
         </h1>
-        <ProgressBar completed={completed} setCompleted={setCompleted} />
       </div>
       <h2 className={styles.currentTestTitle}>
         Choose your Frontend Framework
