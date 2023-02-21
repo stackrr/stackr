@@ -1,6 +1,8 @@
 import React from "react";
 import styles from "./StackChoiceBar.module.css";
 import StackChoice from "../StackChoice/StackChoice";
+import { Link } from "react-router-dom";
+import ResultsPage from "../ResultsPage/ResultsPage";
 
 function StackChoiceBar({ stackChoices }) {
   console.log(stackChoices);
@@ -12,6 +14,9 @@ function StackChoiceBar({ stackChoices }) {
           return <StackChoice stackChoice={stackChoice.name} />;
         })}
       </div>
+      <Link to="/results" className={styles.resultsButton}>
+        View Your Stack
+      </Link>
     </div>
   );
 }

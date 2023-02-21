@@ -5,7 +5,7 @@ import texts from "./data";
 function HomeCarousel() {
   return (
     <div className="w-full h-full flex justify-center items-center">
-      <Carousel className="">
+      <Carousel style={{ height: "320px" }}>
         {texts.map((text, idx) => (
           <CarouselCard key={idx} text={text} />
         ))}

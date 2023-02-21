@@ -1,3 +1,8 @@
+::root {
+  --sky-400: #38bdf8;
+  --indigo-300: #a5b4fc;
+}
+
 .wrapper {
   font-size: 1rem;
   display: flex;
@@ -6,7 +11,7 @@
 }
 
 .cardAndButtonHolder {
-  flex: 1;
+  width: 23%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -15,7 +20,7 @@
 }
 
 .mainCard {
-  background: rgba(197, 197, 197, 0.5);
+  background: rgba(255, 255, 255, 0.5);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
@@ -25,9 +30,25 @@
   width: 100%;
 }
 
+::-webkit-scrollbar {
+  width: 0.5rem;
+  background-color: white;
+  /* left: 0; */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #38bdf8;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgba(56, 189, 248, 0.25);
+}
+
 .selector {
   font-size: 1rem;
-  background: rgba(0, 0, 0, 0.5);
+  background: linear-gradient(45deg, #a5b4fc 0%, #38bdf8 100%);
+  /* background: radial-gradient(circle, #38bdf8 0%, #a5b4fc 100%); */
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
@@ -39,10 +60,7 @@
   font-weight: 600;
   margin: 0;
   margin-top: 1rem;
-}
-
-.selector::-webkit-scrollbar {
-  width: 0.5rem;
+  overflow-wrap: break-word;
 }
 
 .infoBlock {
