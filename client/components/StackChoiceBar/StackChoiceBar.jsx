@@ -5,13 +5,11 @@ import { Link } from "react-router-dom";
 import ResultsPage from "../ResultsPage/ResultsPage";
 
 function StackChoiceBar({ stackChoices }) {
-  console.log(stackChoices);
   return (
     <div className={styles.wrapper}>
       <div className={styles.stackChoiceBar}>
         {stackChoices.map((stackChoice) => {
-          console.log("stackChoice", stackChoice);
-          return <StackChoice stackChoice={stackChoice.name} />;
+          return <StackChoice stackChoice={stackChoice} />;
         })}
       </div>
       <Link to="/results" className={styles.resultsButton}>

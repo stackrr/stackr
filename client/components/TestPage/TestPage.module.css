@@ -1,5 +1,5 @@
 .wrapper {
-  @apply bg-gradient-to-br from-[#2E3233] to-[#6C96C9] w-screen h-screen;
+  @apply bg-gradient-to-br from-[#2E3233] to-[#6C96C9] w-screen min-h-screen;
   font-size: 1rem;
   width: 100%;
   min-height: 100%;
@@ -28,10 +28,29 @@
   position: relative;
 }
 
-.cardHolder {
+.cardAndStackHolder {
   display: flex;
-  height: 70%;
-  margin: 0 2rem;
+  margin: 0 0rem;
+  justify-content: space-around;
+  max-height: 70%;
+  max-width: 100%;
+}
+
+.stackColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cardsHolder {
+  justify-self: flex-start;
+  max-width: 80%;
+  height: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  margin: 0 0rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
 }
 
 .currentTestTitle {
@@ -41,4 +60,21 @@
   margin-bottom: 0.5rem;
   color: #38bdf8;
   text-shadow: 1px 1px 2px rgb(46, 50, 51);
+}
+
+.nextButton {
+  font-size: 1rem;
+  background: linear-gradient(45deg, #a5b4fc 0%, #38bdf8 100%);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-radius: 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  margin: 1rem;
+  color: white;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  margin: 0;
+  margin-top: 1rem;
+  height: 40px;
 }

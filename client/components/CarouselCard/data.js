@@ -1,6 +1,6 @@
 const texts = [
   `When starting a project from scratch as a junior software engineer, it can be very difficult to
-  determine which technologies you want to use`,
+  determine which technologies to use`,
   `With so many technologies and frameworks out there, how do you know which one to choose?`,
   `It is important to know what you have at your disposal and the tradeoffs between technologies`,
   `That's why we developed stackr`,

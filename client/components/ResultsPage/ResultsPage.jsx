@@ -13,9 +13,9 @@ function ResultsPage({ stackChoices }) {
             key={i}
             type={choice.type}
             name={choice.name}
-            resources={choice.resources}
             pros={choice.pros}
             cons={choice.cons}
+            links={choice.links}
           />
         ))}
       </div>
