@@ -17,6 +17,57 @@ function App() {
           <TestPage
             stackChoices={stackChoices}
             setStackChoices={setStackChoices}
+            nextPage="/"
+          />
+        }
+      />
+      <Route
+        path="/bundler"
+        element={
+          <TestPage
+            stackChoices={stackChoices}
+            setStackChoices={setStackChoices}
+            nextPage="/database"
+          />
+        }
+      />
+      <Route
+        path="/database"
+        element={
+          <TestPage
+            stackChoices={stackChoices}
+            setStackChoices={setStackChoices}
+            nextPage="/server"
+          />
+        }
+      />
+      <Route
+        path="/server"
+        element={
+          <TestPage
+            stackChoices={stackChoices}
+            setStackChoices={setStackChoices}
+            nextPage="/frameworks"
+          />
+        }
+      />
+      <Route
+        path="/frameworks"
+        element={
+          <TestPage
+            stackChoices={stackChoices}
+            setStackChoices={setStackChoices}
+            nextPage="/styling"
+          />
+        }
+      />
+      <Route
+        path="/styling"
+        element={
+          <TestPage
+            stackChoices={stackChoices}
+            setStackChoices={setStackChoices}
+            nextPage="/results"
           />
         }
       />

@@ -4,13 +4,16 @@ import { Link } from "react-router-dom";
 import styles from "./TestPage.module.css";
 import ProgressBar from "../ProgressBar/ProgressBar";
 import Card from "../Card/Card";
+import StackChoiceSidebar from "../StackChoiceBar/StackChoiceSidebar";
+
 import StackChoiceBar from "../StackChoiceBar/StackChoiceBar";
 import StackChoice from "../StackChoice/StackChoice";
 import TopBar from "../TopBar/TopBar";
 
-function TestPage({ stackChoices, setStackChoices }) {
+function TestPage({ stackChoices, setStackChoices, nextPage }) {
   // dummy data for percentage completion
   const [completed, setCompleted] = useState(30);
+  const [isSidebarVisible, setIsSidebarVisible] = useState(false);
   // dummy data for rendering cards
   const testOptions = [
     {
@@ -56,6 +59,15 @@ function TestPage({ stackChoices, setStackChoices }) {
     setStackChoices(updatedChoices);
   }
 
+  function handleToggle() {
+    // const choices = stackChoice.push(choice);
+    if (isSidebarVisible) {
+      setIsSidebarVisible(false);
+    } else {
+      setIsSidebarVisible(true);
+    }
+  }
+
   // get state for options
   const [options, setOptions] = useState(testOptions);
 
@@ -67,12 +79,13 @@ function TestPage({ stackChoices, setStackChoices }) {
           completed={completed}
           setCompleted={setCompleted}
         />
-
-        <h1
-          className={`${styles.logo} bg-gradient-to-r from-indigo-300 via-sky-400 to-indigo-300 bg-clip-text text-5xl text-transparent`}
-        >
-          stackr
-        </h1>
+        <button onClick={handleToggle}>
+          <h1
+            className={`${styles.logo} bg-gradient-to-r from-indigo-300 via-sky-400 to-indigo-300 bg-clip-text text-5xl text-transparent`}
+          >
+            stackr
+          </h1>
+        </button>
       </div>
       <h2 className={styles.currentTestTitle}>
         Choose your Frontend Framework
@@ -87,7 +100,16 @@ function TestPage({ stackChoices, setStackChoices }) {
             />
           );
         })}
-        <StackChoiceBar stackChoices={stackChoices} />
+        <StackChoiceSidebar
+          stackChoices={stackChoices}
+          isVisible={isSidebarVisible}
+          setIsSidebarVisible={setIsSidebarVisible}
+        />
+      </div>
+      <div>
+        <Link to={nextPage} className={styles.nextButton}>
+          Continue
+        </Link>
       </div>
     </div>
   );
