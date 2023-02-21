@@ -8,6 +8,7 @@ import "./index.css";
 
 function App() {
   const [stackChoices, setStackChoices] = useState([]);
+
   return (
     <Routes>
       <Route path="/" element={<Home />} />
