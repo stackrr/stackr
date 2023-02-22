@@ -12,7 +12,7 @@ import {
 } from 'chart.js/auto';
 import styles from "./NpmGraph.module.css"
 
-const frequency = 10;
+const frequency = 7;
 function NpmGraph({packageNames}) {
     const [npmStats, setNpmStats] = useState({});
     // const fetchData = () => {
@@ -31,7 +31,7 @@ function NpmGraph({packageNames}) {
 
     useEffect(()=> {
         //Join all package packageNames with a ','
-        console.log("These are the packageNames: ", packageNames);
+        // console.log("These are the packageNames: ", packageNames);
         let packageNameString = packageNames.join(',');
         console.log("This is the packageNameString: ", packageNameString);
         //Fetch npm download data over a year range for all package
@@ -39,9 +39,25 @@ function NpmGraph({packageNames}) {
         .then(res=>res.json())
         .then(downloadData => {
             for (let fw in downloadData) {
-                for (let i = 0; i < downloadData.length; i)
+                // downloadData[fw].downloads = downloadData[fw].downloads.filter((_,i) => i%10==0);
+                let total = 0;
+                const {downloads} = downloadData[fw];
+                const averageDownload = [];
+                for (let i = 0; i < downloads.length; i++){
+                    if ((i+1)%frequency){
+                        total+=downloads[i].downloads;
+                    }
+                    else{
+                        averageDownload.push({
+                            day: downloads[i].day, 
+                            download: total/frequency
+                        });
+                        total = 0;
+                    }
+                }
+                console.log({averageDownload})
+                // downloadData[fw].averageDownload = averageDownload;
             }
-            Object
             setNpmStats(downloadData);
             console.log("This is the downloadData: ", downloadData)
         })
