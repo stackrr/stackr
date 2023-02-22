@@ -21,12 +21,6 @@ mongoose
   .then(() => {
     /* ADD DATA ONE TIME */
     // Card.insertMany(cards);
-    // console.log(Card.find({ name: "{ $exists: true }" }));
-
-    // console.log(Card.insertMany);
-    // console.log(Card === mongoose.models); // false
-    // console.log(Card) // { Card: Model { cards } }
-    // console.log(mongoose.models); // { cards: Model { cards } }
     console.log("Connected to Mongo DB.");
   })
   .catch((err) => console.log(err));

@@ -23,7 +23,6 @@ function ProgressBar({ completed, setCompleted }) {
         <div
           className={styles.fillerStyles}
           style={{
-            backgroundColor: bgColor,
             width: `${completed}%`,
           }}
         >

@@ -1,3 +1,4 @@
+// How we are populating the database
 const cards = [
   {
     name: "Webpack",

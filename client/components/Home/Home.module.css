@@ -1,1 +1,5 @@
-
+.background {
+  @apply bg-gradient-to-br from-[#2E3233] to-[#6C96C9] w-screen h-screen items-center;
+  display: flex;
+  flex-direction: column;
+}

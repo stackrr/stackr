@@ -9,9 +9,6 @@ dbController.getTech = async (req, res, next) => {
     const cards = await Card.find();
 
     // error handler if query fails
-    // if (!cards) {
-    //   return next(console.log("No cards found."));
-    // }
 
     console.log("cards", cards);
 

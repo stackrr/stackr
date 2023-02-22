@@ -2,15 +2,15 @@ const mongoose = require("mongoose");
 
 const { Schema } = mongoose;
 
-// need to add tech type
+// schema for our card display
 const cardSchema = new Schema({
   name: String,
   type: String,
   description: String,
-  monthlyDownloads: Number,
-  features: [],
+  gitHubStars: Number,
   pros: [],
   cons: [],
+  links: [],
 });
 
 const Card = mongoose.model("card", cardSchema);

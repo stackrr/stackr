@@ -1,13 +1,12 @@
 import * as React from "react";
 import styles from "./Card.module.css";
 
-function Card({ option, handleClick }) {
-  // console.log(option);
-
+function Card({ option, handleClick, data }) {
   return (
     <div className={styles.cardAndButtonHolder}>
       <div className={styles.mainCard}>
         {Object.entries(option).map(([key, val], i) => {
+          if (key === "_id" || key === "__v" || key === "type") return;
           if (!Array.isArray(val)) {
             return (
               <div key={i} className={styles.infoBlock}>
@@ -29,7 +28,10 @@ function Card({ option, handleClick }) {
           }
         })}
       </div>
-      <button className={styles.selector} onClick={() => handleClick(option)}>
+      <button
+        className={styles.selector}
+        onClick={() => handleClick(option, data)}
+      >
         Select {option.name}
       </button>
     </div>
