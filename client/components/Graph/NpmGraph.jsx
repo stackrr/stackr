@@ -13,8 +13,8 @@ import {
 import styles from "./NpmGraph.module.css"
 
 const frequency = 7;
-function NpmGraph({packageNames}) {
-    const [npmStats, setNpmStats] = useState({});
+function NpmGraph({packageNames, setNpmStats, npmStats}) {
+    // const [npmStats, setNpmStats] = useState({});
     // const fetchData = () => {
     //     //Join all package packageNames with a ','
     //     console.log(packageNames)
@@ -29,7 +29,7 @@ function NpmGraph({packageNames}) {
     //     .catch(err => console.log({err}))
     // }
 
-    useEffect(()=> {
+    const fetchData = ()=> {
         //Join all package packageNames with a ','
         // console.log("These are the packageNames: ", packageNames);
         let packageNameString = packageNames.join(',');
@@ -62,7 +62,7 @@ function NpmGraph({packageNames}) {
             console.log("This is the downloadData: ", downloadData)
         })
         .catch(err => console.log({err}))
-     }, []);
+     };
 
      useEffect(()=> {
         console.log("This is the npmStats: ",npmStats)
@@ -104,8 +104,10 @@ function NpmGraph({packageNames}) {
 
 
     if (!Object.keys(npmStats).length) return (
-        <div>Waiting for data to fetch</div>
+        <button onClick={()=> fetchData()}>Create Graph</button>
+        // <div>Waiting for data to fetch</div>
     )
+
     if (Object.keys(npmStats).length) {
         return(
             // <div className={styles.graphContainer}>
