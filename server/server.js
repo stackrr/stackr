@@ -7,8 +7,7 @@ const dbController = require("./controllers/dbController");
 const app = express();
 const PORT = 4000;
 
-const MONGO_URI =
-  "mongodb+srv://stackr:stackr@stackr.jsae8zi.mongodb.net/?retryWrites=true&w=majority";
+const MONGO_URI = "mongodb+srv://peter:stabrabbits@cluster0.uedjbsz.mongodb.net/?retryWrites=true&w=majority";
 
 // CONNECTING MONGODB
 mongoose.set("strictQuery", true);
@@ -20,7 +19,7 @@ mongoose
   })
   .then(() => {
     /* ADD DATA ONE TIME */
-    // Card.insertMany(cards);
+    //Card.insertMany(cards);
     console.log("Connected to Mongo DB.");
   })
   .catch((err) => console.log(err));

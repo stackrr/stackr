@@ -6,6 +6,7 @@ import Card from "../Card/Card";
 import StackChoiceBar from "../StackChoiceBar/StackChoiceBar";
 import StackChoice from "../StackChoice/StackChoice";
 import TopBar from "../TopBar/TopBar";
+import NpmGraph from "../Graph/NpmGraph";
 
 function TestPage({
   handleClick,
@@ -84,6 +85,7 @@ function TestPage({
           Continue
         </Link>
       </div>
+      <NpmGraph packageNames = {data.map(({packageName}) => packageName)} />
     </div>
   );
 }
