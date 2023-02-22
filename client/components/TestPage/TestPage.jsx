@@ -12,6 +12,7 @@ function TestPage({
   stackChoices,
   setStackChoices,
   nextPage,
+  prevPage,
   data,
   completed,
   setCompleted,
@@ -73,9 +74,16 @@ function TestPage({
         <StackChoiceBar stackChoices={stackChoices} />
         {/* </div> */}
       </div>
-      <Link to={nextPage} className={styles.nextButton}>
-        Continue
-      </Link>
+      <div className={styles.backNextBtnContainer}>
+        {prevPage && (
+          <Link to={prevPage} className={styles.backButton}>
+            Back
+          </Link>
+        )}
+        <Link to={nextPage} className={styles.nextButton}>
+          Continue
+        </Link>
+      </div>
     </div>
   );
 }
