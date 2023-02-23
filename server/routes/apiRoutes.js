@@ -15,7 +15,7 @@ route.get("/", dbController.getTech, (req, res) => {
 
 // GRAB GOOGLE TRENDING DATA FOR GIVEN PACKAGE
 route.get("/google-trending", get1YearInterestTrending, (req, res) => {
-  res.status(200).send(res.locals.googleTrending);
+  res.status(200).json(res.locals.googleTrending);
 });
 
 // GRAB NPM DOWNLOAD DATA FOR GIVEN PACKAGE

@@ -1,28 +1,9 @@
 const express = require("express");
-const mongoose = require("mongoose");
-const { Card } = require("./models/Card");
-const cards = require("./data");
+
 const apiRoutes = require("./routes/apiRoutes");
 
 const app = express();
 const PORT = 4000;
-
-const MONGO_URI = "mongodb+srv://peter:stabrabbits@cluster0.uedjbsz.mongodb.net/?retryWrites=true&w=majority";
-
-// CONNECTING MONGODB
-mongoose.set("strictQuery", true);
-mongoose
-  .connect(MONGO_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    dbName: "technologies",
-  })
-  .then(() => {
-    /* ADD DATA ONE TIME */
-    //Card.insertMany(cards);
-    console.log("Connected to Mongo DB.");
-  })
-  .catch((err) => console.log(err));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

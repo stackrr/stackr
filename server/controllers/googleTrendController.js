@@ -3,6 +3,7 @@ const createError = require("./createError");
 const controller = "googleTrendController";
 
 //------------------------IMPORT & CONTROLLER INTIALIZE------------------------
+const rankPackage = require("./rankPackage");
 const googleTrends = require("google-trends-api");
 
 const googleTrendController = {};
@@ -12,7 +13,7 @@ const startTime = new Date(Date.now() - 365 * 24 * 60 * 60 * 1000);
 //--------------------GET INTEREST OVER 1 YEAR----------------------------------
 googleTrendController.get1YearInterestTrending = async (req, res, next) => {
   //Obtain the array of packageName from the request query
-  const { packageName } = req.query;
+  const { packageName, stackLevel } = req.query;
   const packageArr = packageName.split(",");
   try {
     let interest = JSON.parse(
@@ -39,7 +40,11 @@ googleTrendController.get1YearInterestTrending = async (req, res, next) => {
       });
     }
 
-    res.locals.googleTrending = packageInterest;
+    //Rank the package based on the total download in the last 4 weeks
+    let sortedPackage = await rankPackage(packageInterest, stackLevel);
+
+    //Persist information to next route
+    res.locals.googleTrending = { trending: packageInterest, sortedPackage };
     next();
   } catch (err) {
     console.log("error");
