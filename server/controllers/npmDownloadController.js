@@ -10,9 +10,33 @@ const npmDownloadController = {};
 npmDownloadController.get1YearDownloadTrending = async (req, res, next) => {
   //Obtain the array of packageName from the request query
   const { packageName } = req.query;
-  const packageArr = packageName.split(",");
+  const frequency = 7;
+  console.log(packageName);
+
   try {
-    res.locals.npmTrending = packageArr;
+    const response = await fetch(
+      `https://api.npmjs.org/downloads/range/last-year/${packageName}`
+    );
+    const downloadData = await response.json();
+
+    for (let fw in downloadData) {
+      let total = 0;
+      const { downloads } = downloadData[fw];
+      const averageDownload = [];
+      for (let i = 0; i < downloads.length; i++) {
+        if ((i + 1) % frequency) {
+          total += downloads[i].downloads;
+        } else {
+          averageDownload.push({
+            day: new Date(downloads[i].day).toDateString().slice(4),
+            val: Math.round(total / frequency),
+          });
+          total = 0;
+        }
+      }
+      downloadData[fw] = averageDownload;
+    }
+    res.locals.npmTrending = downloadData;
     next();
   } catch (err) {
     console.log("error");
