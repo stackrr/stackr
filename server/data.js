@@ -21,7 +21,7 @@ const cards = [
   },
   {
     name: "Browserify",
-    packageName: 'browserify',
+    packageName: "browserify",
     type: "Bundler",
     description:
       "Browserify is a open-source Javascript bundler tool that allows developers to write and use Node.js-style modules that compile for use in the browser",
@@ -36,20 +36,21 @@ const cards = [
   },
   {
     name: "Vite",
-    packageName: 'vite',
+    packageName: "vite",
     type: "Bundler",
     description:
       "Vite is a modern, fast tool for scaffolding and bundling projects. Vite takes advantage of the native ES modules.",
     gitHubStars: 53.1,
     pros: ["Extremely fast", "Works with multiple frameworks"],
     cons: [
-      "Different tools are used for bundling development and production code. ESbuild is used for development, while Rollup is used for production",
+      "Different tools are used for bundling development and production code",
+      "ESbuild is used for development, while Rollup is used for production",
     ],
     links: ["https://vitejs.dev/guide/"],
   },
   {
     name: "Rollup",
-    packageName: 'rollup',
+    packageName: "rollup",
     type: "Bundler",
     description:
       "Rollup is a JavaScript module bundler that compiles multiple source files into a single bundle",
@@ -63,7 +64,7 @@ const cards = [
   },
   {
     name: "Parcel",
-    packageName: 'parcel',
+    packageName: "parcel",
     type: "Bundler",
     description:
       "Parcel.js is an open-source bundler. It supports many popular languages and can also handle file types like images and fonts. It comes with a few extra tools built-in: a development server, diagnostics, and image compression.",
@@ -78,7 +79,7 @@ const cards = [
   },
   {
     name: "MySQL",
-    packageName: 'mysql',
+    packageName: "mysql",
     type: "Database",
     description:
       "MySQL is an open-source relational database management system.",
@@ -97,7 +98,7 @@ const cards = [
   },
   {
     name: "PostgreSQL",
-    packageName: 'postgresql',
+    packageName: "postgresql",
     type: "Database",
     description:
       "PostgreSQL, also known as Postgres, is a free and open-source relational database management system. It supports both SQL and JSON for relational and non-relational queries for extensibility and SQL compliance",
@@ -114,7 +115,7 @@ const cards = [
   },
   {
     name: "Firebird",
-    packageName: 'firebird',
+    packageName: "firebird",
     type: "Database",
     description:
       "Firebird is an open-source SQL relational database management system that supports Linux, Microsoft, macOS and other Unix platforms",
@@ -125,7 +126,7 @@ const cards = [
   },
   {
     name: "MongoDB",
-    packageName: 'mongodb',
+    packageName: "mongodb",
     type: "Database",
     description:
       "MongoDB is a NoSQL database program that stores partially structured data in documents",
@@ -144,7 +145,7 @@ const cards = [
   },
   {
     name: "Redis",
-    packageName: 'redis',
+    packageName: "redis",
     type: "Database",
     description:
       "Redis is an in-memory data structure store, using a distributed, in-memory key-value database, cache and message broker with optional durability.",
@@ -162,7 +163,7 @@ const cards = [
   },
   {
     name: "Express JS",
-    packageName: 'express',
+    packageName: "express",
     type: "Server",
     description:
       "Express JS is a fast, free and high performing frontend and server-side web framework that is used for Node.js.",
@@ -177,7 +178,7 @@ const cards = [
   },
   {
     name: "Ruby on Rails",
-    packageName: 'ruby-on-rails',
+    packageName: "ruby-on-rails",
     type: "Server",
     description:
       "Ruby on Rails is a server-side web application framework written in Ruby. ",
@@ -192,7 +193,7 @@ const cards = [
   },
   {
     name: "Django",
-    packageName: 'django',
+    packageName: "django",
     type: "Server",
     description:
       "Django is a free and open-source, Python-based web framework that follows the model-template-views architectural platform",
@@ -203,7 +204,7 @@ const cards = [
   },
   {
     name: "Flask",
-    packageName: 'flask',
+    packageName: "flask",
     type: "Server",
     description:
       "Flask is a micro web framework written in Python. It does not require tools or libraries",
@@ -214,7 +215,7 @@ const cards = [
   },
   {
     name: "Next.js",
-    packageName: 'next.js',
+    packageName: "next.js",
     type: "Server",
     description:
       "Next.js is open-source web development framework enabling React-based web application with server-side rendering and generating static websites.",
@@ -225,7 +226,7 @@ const cards = [
   },
   {
     name: "React",
-    packageName: 'react',
+    packageName: "react",
     type: "Frameworks",
     description:
       "React.js is a library that allows developers to create reusable building blocks called components that can be used to build complex and interactive web applications.",
@@ -243,7 +244,7 @@ const cards = [
   },
   {
     name: "Angular",
-    packageName: 'angular',
+    packageName: "angular",
     type: "Frameworks",
     description:
       "AngularJS is a framework that provides a more structured approach to building web applications. It uses a technique called two-way data binding to automatically update the interface whenever the data changes.",
@@ -258,7 +259,7 @@ const cards = [
   },
   {
     name: "Vue",
-    packageName: 'vue',
+    packageName: "vue",
     type: "Frameworks",
     description:
       "Vue.js is a JavaScript library that helps developers build interactive and dynamic web applications. It provides a set of pre-built tools and functions to make it easier to create reusable components and manage complex user interfaces.",
@@ -276,7 +277,7 @@ const cards = [
   },
   {
     name: "ember.js",
-    packageName: 'ember',
+    packageName: "ember",
     type: "Frameworks",
     description:
       "Ember.js is a JavaScript framework used for building scalable web applications. It provides a lot of built-in features and conventions that make it easy to structure and organize large codebases.",
@@ -291,7 +292,7 @@ const cards = [
   },
   {
     name: "Svelte",
-    packageName: 'svelte',
+    packageName: "svelte",
     type: "Frameworks",
     description:
       "Svelte is a modern JavaScript framework used for building web applications. It makes your applications faster and more efficient because code is compiled at build time, rather than at runtime. ",
@@ -307,7 +308,7 @@ const cards = [
 
   {
     name: "Tailwind",
-    packageName: 'tailwind',
+    packageName: "tailwind",
     type: "Styling",
     description:
       "Tailwind CSS is a CSS framework that provides pre-defined CSS classes that can be applied directly to HTML elements to style them",
@@ -323,7 +324,7 @@ const cards = [
 
   {
     name: "Bootstrap",
-    packageName: 'bootstrap',
+    packageName: "bootstrap",
     type: "Styling",
     description:
       "Bootstrap is a popular CSS framework that helps you design responsive and mobile-first websites quickly",
@@ -339,7 +340,7 @@ const cards = [
 
   {
     name: "Material UI",
-    packageName: '@mui/material',
+    packageName: "@mui/material",
     type: "Styling",
     description:
       "Material UI is a popular React component library that provides pre-built UI components based on Google's Material Design guidelines",
@@ -355,7 +356,7 @@ const cards = [
 
   {
     name: "Semantic UI",
-    packageName: 'semantic-ui',
+    packageName: "semantic-ui",
     type: "Styling",
     description:
       "Semantic UI is a popular front-end development framework that makes it easy to create modern and responsive user interfaces",
@@ -371,7 +372,7 @@ const cards = [
 
   {
     name: "Materialize",
-    packageName: 'materialize',
+    packageName: "materialize",
     type: "Styling",
     description:
       "Materialize CSS is a responsive front-end CSS framework that is based on Google's Material Design principles",
