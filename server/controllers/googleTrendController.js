@@ -32,13 +32,13 @@ googleTrendController.get1YearInterestTrending = async (req, res, next) => {
     });
 
     //Organize interest based on package name:
-    const packageInterest = packageArr.map((packageName, i) => {
-      const data = {};
-      data[packageName] = interest.map(({ day, value }) => {
+    const packageInterest = {};
+    for (let i in packageArr) {
+      packageInterest[packageArr[i]] = interest.map(({ day, value }) => {
         return { day, val: value[i] };
       });
-      return data;
-    });
+    }
+
     res.locals.googleTrending = packageInterest;
     next();
   } catch (err) {

@@ -1,0 +1,7 @@
+.graphAndButtonContainer {
+  @apply w-full flex flex-col items-center;
+}
+
+.graphContainer {
+  @apply flex justify-center w-3/5 bg-gray-50 rounded-xl my-8;
+}
