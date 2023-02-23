@@ -3,10 +3,26 @@ import { MemoryRouter } from 'react-router-dom';
 import Card from './Card';
 
 describe('Card Tests', () => {
+
+    const handleClick = vi.fn()
+
     const props = {
-        option: true,
-        handleClick: () => {console.log('click')},
-        data: ['foo','bar','baz'],
+        data: {
+            name: 'Framework Name',
+            type: 'Bundler/front/back/db',
+            description: 'a description of this choice',
+            gitHubStars: 100,
+            pros: [
+                'a pro',
+                'another pro',
+                'third pro',
+            ],
+            cons: ['a con', 'another con'],
+            links: ['https://google.com']
+
+        },
+        handleClick: handleClick,
+        option: 'placeholder',
     }
 
     test("Should render two elements", () => {
