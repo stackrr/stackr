@@ -12,8 +12,18 @@ function Selection({ type, name, pros, cons, links }) {
             <h1 className="font-display text-3xl tracking-tight text-slate-900 text-center">
               {type}: {name}
             </h1>
-            <h2 className="mt-1 text-lg text-slate-700">Pros: {pros}</h2>
-            <h2 className="mt-1 text-lg text-slate-700">Cons: {cons}</h2>
+            <ul className="mt-1 text-lg text-slate-700">
+              Pros:
+              {pros.map((pro, i) => {
+                return <li key={i}>{pro}</li>;
+              })}
+            </ul>
+            <ul className="mt-1 text-lg text-slate-700">
+              Cons:
+              {cons.map((con, i) => {
+                return <li key={i}>{con}</li>;
+              })}
+            </ul>
           </Popover.Button>
           <Transition
             enter="transition duration-100 ease-out"

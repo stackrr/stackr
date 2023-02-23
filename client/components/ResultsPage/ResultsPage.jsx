@@ -9,7 +9,13 @@ function ResultsPage({ stackChoices, prevPage }) {
     <div className={styles.wrapper}>
       <TopBar />
       <div className={styles.btnWrapper}>
-        <Link to={prevPage} className={styles.backButton}>
+        <Link
+          to={prevPage}
+          className={styles.backButton}
+          onClick={() => {
+            setStackChoices([]);
+          }}
+        >
           Home
         </Link>
       </div>
