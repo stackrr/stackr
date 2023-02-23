@@ -13,6 +13,42 @@ const cardSchema = new Schema({
   cons: [],
   links: [],
 });
+const bundlerSchema = new Schema({
+  name: String,
+  description: String,
+  gitHubStars: Number,
+  packageName: String,
+  pros: [],
+  cons: [],
+  links: [],
+});
+const databaseSchema = new Schema({
+  name: String,
+  description: String,
+  gitHubStars: Number,
+  packageName: String,
+  pros: [],
+  cons: [],
+  links: [],
+});
+const cardSchema = new Schema({
+  name: String,
+  description: String,
+  gitHubStars: Number,
+  packageName: String,
+  pros: [],
+  cons: [],
+  links: [],
+});
+const cardSchema = new Schema({
+  name: String,
+  description: String,
+  gitHubStars: Number,
+  packageName: String,
+  pros: [],
+  cons: [],
+  links: [],
+});
 
 const Card = mongoose.model("card", cardSchema);
 
