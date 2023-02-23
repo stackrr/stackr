@@ -50,13 +50,13 @@ function NpmGraph({packageNames, setNpmStats, npmStats}) {
                     else{
                         averageDownload.push({
                             day: downloads[i].day, 
-                            download: total/frequency
+                            downloads: Math.round(total/frequency*100)/100
                         });
                         total = 0;
                     }
                 }
                 console.log({averageDownload})
-                // downloadData[fw].averageDownload = averageDownload;
+                downloadData[fw].downloads = averageDownload;
             }
             setNpmStats(downloadData);
             console.log("This is the downloadData: ", downloadData)
@@ -111,7 +111,7 @@ function NpmGraph({packageNames, setNpmStats, npmStats}) {
     if (Object.keys(npmStats).length) {
         return(
             // <div className={styles.graphContainer}>
-            <div className="flex justify-center w-1/2">
+            <div className="flex justify-center w-3/5 bg-gray-50 opacity-85 rounded-xl my-8 ">
                 <Line
                  data={data}
                 //  options={{

@@ -39,42 +39,6 @@ function TestPage({
   //   right.scrollBy(-200, 0);
   // }
 
-//   const fetchData = ()=> {
-//     //Join all package packageNames with a ','
-//     // console.log("These are the packageNames: ", packageNames);
-//     const {packageNames} = data;
-//     let packageNameString = packageNames.join(',');
-//     console.log("This is the packageNameString: ", packageNameString);
-//     setNpmStats({});
-//     //Fetch npm download data over a year range for all package
-//     fetch(`https://api.npmjs.org/downloads/range/last-year/${packageNameString}`)
-//     .then(res=>res.json())
-//     .then(downloadData => {
-//         // for (let fw in downloadData) {
-//         //     // downloadData[fw].downloads = downloadData[fw].downloads.filter((_,i) => i%10==0);
-//         //     let total = 0;
-//         //     const {downloads} = downloadData[fw];
-//         //     const averageDownload = [];
-//         //     for (let i = 0; i < downloads.length; i++){
-//         //         if ((i+1)%frequency){
-//         //             total+=downloads[i].downloads;
-//         //         }
-//         //         else{
-//         //             averageDownload.push({
-//         //                 day: downloads[i].day, 
-//         //                 download: total/frequency
-//         //             });
-//         //             total = 0;
-//         //         }
-//         //     }
-//         //     console.log({averageDownload})
-//         //     // downloadData[fw].averageDownload = averageDownload;
-//         // }
-//         setNpmStats(downloadData);
-//         console.log("This is the downloadData: ", downloadData)
-//     })
-//     .catch(err => console.log({err}))
-//  };
 
   return (
     <div className={styles.wrapper}>
