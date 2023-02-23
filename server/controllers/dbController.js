@@ -10,7 +10,8 @@ dbController.getTech = async (req, res, next) => {
 
     // error handler if query fails
 
-    console.log("cards", cards);
+    // console.log("cards", cards);
+    console.log('card data retrived from db');
 
     // store data in the res.locals
     res.locals.cards = cards;

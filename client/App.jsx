@@ -164,7 +164,7 @@ function App() {
 
       <Route
         path="/results"
-        element={<ResultsPage stackChoices={stackChoices} />}
+        element={<ResultsPage stackChoices={stackChoices} prevPage="/" />}
       />
     </Routes>
   );

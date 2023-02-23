@@ -1,3 +1,8 @@
 .wrapper {
   margin: 0rem 0.5rem 0.25rem 0.5rem;
+  text-align: center;
+  color: white;
+  background: linear-gradient(45deg, #a5b4fc 0%, #38bdf8 100%);
+  /* background: linear-gradient(45deg, #38bdf8 0%, rgb(77 100 128) 100%); */
+  border-radius: 10px;
 }
