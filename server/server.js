@@ -2,7 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const { Card } = require("./models/Card");
 const cards = require("./data");
-const dbController = require("./controllers/dbController");
+const apiRoutes = require("./routes/apiRoutes");
 
 const app = express();
 const PORT = 4000;
@@ -28,10 +28,7 @@ mongoose
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// GRABBING DATA TO RENDER ON FRONTEND
-app.get("/api", dbController.getTech, (req, res) => {
-  res.status(200).json(res.locals.cards);
-});
+app.use("/api", apiRoutes);
 
 // ERROR HANDLERS
 app.use((req, res) => res.status(404).send("Page not found"));
