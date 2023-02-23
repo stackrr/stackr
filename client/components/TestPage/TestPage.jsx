@@ -23,7 +23,7 @@ function TestPage({
   // get state for options
   // const [options, setOptions] = useState(testOptions);
 
-  console.log(data);
+  //console.log(data);
 
   // function leftScroll() {
   //   const left = document.querySelector(".cardsHolder");
