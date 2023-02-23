@@ -24,7 +24,7 @@ function TestPage({
   // get state for options
   // const [options, setOptions] = useState(testOptions);
 
-  // console.log(data);
+  console.log(data);
 
   //Initialize npmStats state
   const [npmStats, setNpmStats] = useState({});

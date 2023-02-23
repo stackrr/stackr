@@ -10,6 +10,7 @@ import {
   Tooltip,
   Legend,
 } from "chart.js/auto";
+import styles from "./Graph.module.css";
 
 function Graph({
   packageNames,
@@ -30,7 +31,6 @@ function Graph({
   ];
   //Initialize graph data:
   const [graphData, setGraphData] = useState({});
-  //   const [trendingType, setTrendingType] = useState("npm-download");
 
   /** When click create graph, fetchData is invoked
    * 1. fetch to get npm/google search trending
@@ -96,11 +96,9 @@ function Graph({
 
   if (Object.keys(npmStats).length) {
     return (
-      <div className="w-full flex flex-col items-center">
-        <button className="" onClick={handleToggleClick}>
-          Toggle {trendingType}
-        </button>
-        <div className="flex justify-center w-3/5 bg-gray-50 opacity-85 rounded-xl my-8 ">
+      <div className={styles.graphAndButtonContainer}>
+        <button onClick={handleToggleClick}>Toggle {trendingType}</button>
+        <div className={styles.graphContainer}>
           <Line
             data={graphData}
 
