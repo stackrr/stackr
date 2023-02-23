@@ -61,12 +61,21 @@ const stylingSchema = new Schema({
   links: [],
 });
 
+//Trend schema expire after 30s of the entry was made
+const trendSchema = new Schema({
+  type: String,
+  createAt: {type: Date, expires: 30, default: Date.now },
+  google: [],
+  npm: [],
+});
+
 const Card = mongoose.model("card", cardSchema);
 const Bundler = mongoose.model("bundler", bundlerSchema);
 const Database = mongoose.model("database", databaseSchema);
 const Server = mongoose.model("server", serverSchema);
 const Framework = mongoose.model("framework", frameworkSchema);
 const Styling = mongoose.model("styling", stylingSchema);
+const Trend = mongoose.model("trend", trendSchema);
 
 const MONGO_URI =
   "mongodb+srv://peter:stabrabbits@cluster0.uedjbsz.mongodb.net/?retryWrites=true&w=majority";
