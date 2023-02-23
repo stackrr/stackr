@@ -6,7 +6,7 @@ import Card from "../Card/Card";
 import StackChoiceBar from "../StackChoiceBar/StackChoiceBar";
 import StackChoice from "../StackChoice/StackChoice";
 import TopBar from "../TopBar/TopBar";
-import NpmGraph from "../Graph/NpmGraph";
+import Graph from "../Graph/Graph";
 
 function TestPage({
   handleClick,
@@ -25,10 +25,10 @@ function TestPage({
   // const [options, setOptions] = useState(testOptions);
 
   console.log(data);
-  
+
   //Initialize npmStats state
   const [npmStats, setNpmStats] = useState({});
-
+  const [trendingType, setTrendingType] = useState("npm-download");
 
   // function leftScroll() {
   //   const left = document.querySelector(".cardsHolder");
@@ -38,7 +38,6 @@ function TestPage({
   //   const right = document.querySelector(".cardsHolder");
   //   right.scrollBy(-200, 0);
   // }
-
 
   return (
     <div className={styles.wrapper}>
@@ -82,15 +81,33 @@ function TestPage({
       </div>
       <div className={styles.backNextBtnContainer}>
         {prevPage && (
-          <Link to={prevPage} onClick={()=>setNpmStats({})} className={styles.backButton}>
+          <Link
+            to={prevPage}
+            onClick={() => {
+              setNpmStats({}), setTrendingType("npm-download");
+            }}
+            className={styles.backButton}
+          >
             Back
           </Link>
         )}
-        <Link to={nextPage} onClick={()=>setNpmStats({})} className={styles.nextButton}>
+        <Link
+          to={nextPage}
+          onClick={() => {
+            setNpmStats({}), setTrendingType("npm-download");
+          }}
+          className={styles.nextButton}
+        >
           Continue
         </Link>
       </div>
-      <NpmGraph setNpmStats={setNpmStats} npmStats={npmStats} packageNames = {data.map(({packageName}) => packageName)} />
+      <Graph
+        setNpmStats={setNpmStats}
+        npmStats={npmStats}
+        trendingType={trendingType}
+        setTrendingType={setTrendingType}
+        packageNames={data.map(({ packageName }) => packageName)}
+      />
     </div>
   );
 }
