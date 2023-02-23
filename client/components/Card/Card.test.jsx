@@ -25,10 +25,10 @@ describe('Card Tests', () => {
         option: 'placeholder',
     }
 
-    test("Should render two elements", () => {
+    test("Card should have text with name matching props", () => {
         render(<Card {...props}/>);
-        // const cc = screen.getAllByRole('generic');
-        // expect(cc).toHaveLength(2);
+        const cc = screen.getByText(`Select`);
+        expect(cc).toBeInTheDocument();
     })
 
     // test('Should render passed in text', () => {

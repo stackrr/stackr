@@ -7,7 +7,7 @@ import ResultsPage from "../ResultsPage/ResultsPage";
 function StackChoiceBar({ stackChoices }) {
   return (
     <div className={styles.wrapper}>
-      <div className={styles.stackChoiceBar}>
+      <div className={styles.stackChoiceBar} data-testid="stackChoiceBar">
         {stackChoices.map((stackChoice) => {
           return <StackChoice stackChoice={stackChoice} />;
         })}
