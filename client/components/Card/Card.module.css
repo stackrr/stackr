@@ -20,22 +20,27 @@
 }
 
 .mainCard {
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(251, 251, 251, 0.9);
+  /* background: rgba(253, 253, 253, 0.91); */
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
-  border-radius: 10px;
+  border-radius: 5px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   overflow-y: scroll;
-  width: 200px;
+  width: 300px;
   overflow-wrap: break-word;
   hyphens: auto;
-  max-height: 500px;
+  height: 500px;
+  /* min-height: 500px;
+  max-height: 500px; */
 }
 
 ::-webkit-scrollbar {
   width: 0.5rem;
   background-color: white;
+  border-radius: 20px;
+
   /* left: 0; */
 }
 
@@ -72,8 +77,25 @@
   padding-bottom: 1rem;
   list-style: square;
 }
+.infoBlock h3,
+.infoBlock h4 {
+  text-transform: uppercase;
+  /* background: linear-gradient(45deg, #a5b4fc 0%, #38bdf8 100%); */
+  margin-right: 2em;
+  color: linear-gradient(45deg, #a5b4fc 0%, #38bdf8 100%);
+  background: -webkit-linear-gradient(#38bdf8, rgb(60 74 88));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
 .list {
   list-style: square;
   padding-left: 1rem;
+}
+
+li a:hover {
+  color: linear-gradient(45deg, #a5b4fc 0%, #38bdf8 100%);
+  background: -webkit-linear-gradient(#38bdf8, rgb(60 74 88));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

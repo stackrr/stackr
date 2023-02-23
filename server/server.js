@@ -2,13 +2,12 @@ const express = require("express");
 const mongoose = require("mongoose");
 const { Card } = require("./models/Card");
 const cards = require("./data");
-const dbController = require("./controllers/dbController");
+const apiRoutes = require("./routes/apiRoutes");
 
 const app = express();
 const PORT = 4000;
 
-const MONGO_URI =
-  "mongodb+srv://stackr:stackr@stackr.jsae8zi.mongodb.net/?retryWrites=true&w=majority";
+const MONGO_URI = "mongodb+srv://peter:stabrabbits@cluster0.uedjbsz.mongodb.net/?retryWrites=true&w=majority";
 
 // CONNECTING MONGODB
 mongoose.set("strictQuery", true);
@@ -20,7 +19,7 @@ mongoose
   })
   .then(() => {
     /* ADD DATA ONE TIME */
-    // Card.insertMany(cards);
+    //Card.insertMany(cards);
     console.log("Connected to Mongo DB.");
   })
   .catch((err) => console.log(err));
@@ -28,10 +27,7 @@ mongoose
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// GRABBING DATA TO RENDER ON FRONTEND
-app.get("/api", dbController.getTech, (req, res) => {
-  res.status(200).json(res.locals.cards);
-});
+app.use("/api", apiRoutes);
 
 // ERROR HANDLERS
 app.use((req, res) => res.status(404).send("Page not found"));

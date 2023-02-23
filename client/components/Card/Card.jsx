@@ -14,6 +14,22 @@ function Card({ option, handleClick, data }) {
                 <span>{val}</span>
               </div>
             );
+          }
+          if ({ key }.key === "links") {
+            return (
+              <div key={i} className={styles.infoBlock}>
+                <h4>{key}: </h4>
+                <ul className={styles.list}>
+                  {val.map((point, i) => {
+                    return (
+                      <li key={i}>
+                        <a href={point}>{option.name}</a>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            );
           } else {
             return (
               <div key={i} className={styles.infoBlock}>
