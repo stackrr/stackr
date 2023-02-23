@@ -3,5 +3,38 @@
 }
 
 .graphContainer {
-  @apply flex justify-center w-3/5 bg-gray-50 rounded-xl my-8;
+  @apply flex justify-center h-full w-full bg-gray-50 rounded-xl ;
+}
+
+.graphGradientOutline {
+  @apply w-3/5 rounded-xl bg-gradient-to-r from-purple-300 to-blue-300 p-1.5 mb-10;
+}
+/* rgb(28, 142, 192) */
+
+.graphChart {
+  @apply rounded-xl bg-gradient-to-r from-blue-50 to-purple-50;
+}
+
+.graphButton {
+  font-size: 1rem;
+  background: linear-gradient(45deg, #a5b4fc 0%, #38bdf8 100%);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-radius: 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  margin: 1rem;
+  color: white;
+  padding: 0.5rem 2rem;
+  font-weight: 600;
+  margin-right: 0.5rem;
+  margin-top: 1rem;
+  height: 40px;
+}
+.graphButton {
+  padding: 0.5rem 1rem;
+  margin: 0.5rem;
+}
+.graphButton:hover {
+  background: linear-gradient(45deg, #a5b4fc 0%, #1c8ec0 100%);
 }

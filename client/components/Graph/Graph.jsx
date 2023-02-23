@@ -84,6 +84,8 @@ function Graph({
       trendingType === "npm-download" ? "google-trending" : "npm-download"
     );
   };
+  const currentTrendingType = trendingType === "npm-download" ? "NPM Download" : "Google Trending";
+  const switchGraphButtonText = trendingType === "npm-download" ? "Google Trending" : "NPM Download";
   //Refetch Data after trending type has changed
   useEffect(() => {
     if (Object.keys(npmStats).length) {
@@ -92,20 +94,23 @@ function Graph({
   }, [trendingType]);
 
   if (!Object.keys(npmStats).length)
-    return <button onClick={fetchData}>Create Graph</button>;
+    return <button className={styles.graphButton} onClick={fetchData}>See Popularity</button>;
 
   if (Object.keys(npmStats).length) {
     return (
       <div className={styles.graphAndButtonContainer}>
-        <button onClick={handleToggleClick}>Toggle {trendingType}</button>
+        <button className={styles.graphButton} onClick={handleToggleClick}><b>{currentTrendingType}</b>, Toggle To {switchGraphButtonText}</button>
+        <div className={styles.graphGradientOutline}>
         <div className={styles.graphContainer}>
           <Line
+            className={styles.graphChart}
             data={graphData}
 
             //  options={{
             //     responsive: false
             //  }}
           />
+        </div>
         </div>
       </div>
     );
