@@ -8,6 +8,7 @@ const cardSchema = new Schema({
   type: String,
   description: String,
   gitHubStars: Number,
+  packageName: String,
   pros: [],
   cons: [],
   links: [],
